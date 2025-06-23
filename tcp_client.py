@@ -4,7 +4,7 @@ import threading
 # TARGET_HOST = "www.google.com"
 # TARGET_PORT = 80
 
-TARGET_HOST = "10.175.233.216"
+TARGET_HOST = "<SERVER_IP>"
 TARGET_PORT = 9998
 SENTINEL = 'bye brotha'
 
