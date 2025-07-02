@@ -4,7 +4,7 @@ import sys
 
 client_name = "*"
 
-TARGET_HOST = "10.175.233.216"
+TARGET_HOST = "<HOST_IP>"
 TARGET_PORT = 9998
 SENTINEL = 'QUIT<!>'
 
@@ -64,4 +64,12 @@ try:
         boardcast_msg(client, msg.encode('utf-8'))
         msg = input(CMD_PROMPT_TXT).replace('\n', '')
 
-client.close()
+except ConnectionRefusedError:
+    print("[*] Host is not on...")
+except Exception as e:
+    print("[*] An error occurs :(")
+finally:
+    client.close()
+    sys.exit()
+
+# add name => setname()
